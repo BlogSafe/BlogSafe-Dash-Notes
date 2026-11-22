@@ -1,0 +1,19 @@
+# Working notes: kept on disk, never in the repository.
+BRAIN.md
+PROJECT-NOTES.md
+SECURITY-REVIEW.md
+AGENTS.md
+CLAUDE.md
+
+# Test suites: run locally against the test sites, not shipped.
+tests/
+
+# Plugin Check reports (they link to the live site's admin).
+*-php-*.json
+
+# Build output and local clutter.
+*.zip
+releases/
+.DS_Store
+Thumbs.db
+desktop.ini

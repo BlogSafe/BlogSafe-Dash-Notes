@@ -1,0 +1,439 @@
+/*
+ * BlogSafe Dash Notes: its own admin pages (All Notes, Settings).
+ * Dark "console" theme matching BlogSafe Forensics (same palette and
+ * layout). Scoped to body.bsdn-admin, which only Dash Notes' own pages
+ * get; the sticky notes themselves keep their own colours.
+ */
+
+body.bsdn-admin,
+body.bsdn-admin #wpwrap,
+body.bsdn-admin #wpcontent,
+body.bsdn-admin #wpfooter {
+	background: #1e1e1e;
+}
+
+body.bsdn-admin #wpfooter,
+body.bsdn-admin #wpfooter p {
+	color: #8996a0;
+}
+
+body.bsdn-admin #wpfooter a {
+	color: #56a5ff;
+}
+
+body.bsdn-admin #screen-meta-links .show-settings,
+body.bsdn-admin #screen-meta {
+	background: #121c24;
+	border-color: #26343f;
+	color: #d5dde2;
+}
+
+body.bsdn-admin .update-nag,
+body.bsdn-admin #wpbody-content > .notice {
+	background: #121c24;
+	border-color: #26343f;
+	color: #d5dde2;
+}
+
+.bsdn-console {
+	--bsdn-bg: #0b1116;
+	--bsdn-pane: #121c24;
+	--bsdn-line: #26343f;
+	--bsdn-track: #17232c;
+	--bsdn-text: #d5dde2;
+	--bsdn-dim: #8996a0;
+	--bsdn-head: #f4f7f8;
+	--bsdn-cyan: #c8d1d7;
+	--bsdn-crit: #ff4b53;
+	--bsdn-warn: #f5a623;
+	--bsdn-note: #56a5ff;
+	--bsdn-ok: #17d13c;
+	--bsdn-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	max-width: 1600px;
+	margin-top: 20px;
+	padding: 20px;
+	box-sizing: border-box;
+	color: var(--bsdn-text);
+	background: var(--bsdn-bg);
+	border: 1px solid var(--bsdn-line);
+	border-radius: 10px;
+}
+
+.bsdn-console a {
+	color: var(--bsdn-note);
+}
+
+.bsdn-console a:hover,
+.bsdn-console a:focus {
+	color: #8cc2ff;
+}
+
+.bsdn-console a:focus,
+.bsdn-console button:focus,
+.bsdn-console input:focus,
+.bsdn-console select:focus {
+	box-shadow: 0 0 0 2px var(--bsdn-cyan);
+	outline: none;
+}
+
+.bsdn-console h1,
+.bsdn-console h2,
+.bsdn-console h3 {
+	color: var(--bsdn-head);
+}
+
+.bsdn-console .description,
+.bsdn-console p.description {
+	color: var(--bsdn-dim);
+}
+
+/* Header: logo, version, site link (as in Forensics). */
+
+.bsdn-head {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px 18px;
+	margin-bottom: 14px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid var(--bsdn-line);
+}
+
+.bsdn-logo {
+	display: block;
+	flex: none;
+	width: 216px;
+	max-width: 100%;
+	height: auto;
+}
+
+.bsdn-head-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	font: 12px var(--bsdn-mono);
+}
+
+.bsdn-label {
+	font: 11px/1.4 var(--bsdn-mono);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--bsdn-dim);
+}
+
+/* Help: at the right end of the header (wraps under the logo on phones). */
+.bsdn-console .bsdn-help-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	margin-left: auto;
+}
+
+.bsdn-help-btn .dashicons {
+	width: 18px;
+	height: 18px;
+	font-size: 18px;
+}
+
+/* Buttons */
+
+.bsdn-console .page-title-action,
+.bsdn-console .button,
+.bsdn-console .button-secondary {
+	background: var(--bsdn-pane);
+	border: 1px solid var(--bsdn-line);
+	color: var(--bsdn-text);
+}
+
+.bsdn-console .page-title-action:hover,
+.bsdn-console .button:hover,
+.bsdn-console .button-secondary:hover,
+.bsdn-console .page-title-action:focus,
+.bsdn-console .button:focus {
+	background: var(--bsdn-track);
+	border-color: var(--bsdn-cyan);
+	color: var(--bsdn-head);
+}
+
+.bsdn-console .button-primary {
+	background: #2271b1;
+	border-color: #2271b1;
+	color: #fff;
+}
+
+.bsdn-console .button-primary:hover,
+.bsdn-console .button-primary:focus {
+	background: #3582c4;
+	border-color: #3582c4;
+	color: #fff;
+}
+
+/* Form fields */
+
+.bsdn-console input[type="search"],
+.bsdn-console input[type="text"],
+.bsdn-console input[type="number"],
+.bsdn-console select {
+	background-color: var(--bsdn-pane);
+	border-color: var(--bsdn-line);
+	color: var(--bsdn-text);
+}
+
+.bsdn-console select {
+	background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%238996a0%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.bsdn-console select:hover {
+	color: var(--bsdn-head);
+}
+
+/* Notices inside the page */
+
+.bsdn-console .notice {
+	background: var(--bsdn-pane);
+	color: var(--bsdn-text);
+	box-shadow: none;
+}
+
+.bsdn-console .notice-dismiss::before {
+	color: var(--bsdn-dim);
+}
+
+/* View tabs (Sent to me / Written by me / Every note) */
+
+.bsdn-console .subsubsub {
+	color: var(--bsdn-dim);
+}
+
+.bsdn-console .subsubsub a {
+	color: var(--bsdn-dim);
+}
+
+.bsdn-console .subsubsub a:hover {
+	color: var(--bsdn-head);
+}
+
+.bsdn-console .subsubsub a.current {
+	color: var(--bsdn-head);
+	font-weight: 600;
+	border-bottom: 2px solid var(--bsdn-cyan);
+}
+
+.bsdn-console .tablenav,
+.bsdn-console .displaying-num {
+	color: var(--bsdn-dim);
+}
+
+.bsdn-console .tablenav .tablenav-pages .button,
+.bsdn-console .tablenav .tablenav-pages .tablenav-pages-navspan {
+	background: var(--bsdn-pane);
+	border-color: var(--bsdn-line);
+	color: var(--bsdn-text);
+}
+
+/* The notes table */
+
+.bsdn-console .wp-list-table {
+	background: var(--bsdn-pane);
+	border: 1px solid var(--bsdn-line);
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: none;
+}
+
+.bsdn-console .wp-list-table thead th,
+.bsdn-console .wp-list-table thead td,
+.bsdn-console .wp-list-table tfoot th,
+.bsdn-console .wp-list-table tfoot td {
+	background: var(--bsdn-bg);
+	border-color: var(--bsdn-line);
+	color: var(--bsdn-dim);
+	font: 11px/1.4 var(--bsdn-mono);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.bsdn-console .wp-list-table th.sortable a,
+.bsdn-console .wp-list-table th.sorted a {
+	color: var(--bsdn-dim);
+}
+
+.bsdn-console .wp-list-table th.sorted a,
+.bsdn-console .wp-list-table th.sortable a:hover {
+	color: var(--bsdn-head);
+}
+
+.bsdn-console .wp-list-table .sorting-indicator::before {
+	color: var(--bsdn-dim);
+}
+
+.bsdn-console .wp-list-table tbody tr,
+.bsdn-console .wp-list-table.striped > tbody > :nth-child(odd) {
+	background: var(--bsdn-pane);
+}
+
+.bsdn-console .wp-list-table.striped > tbody > :nth-child(even) {
+	background: #0f1820;
+}
+
+.bsdn-console .wp-list-table tbody tr:hover {
+	background: var(--bsdn-track);
+}
+
+.bsdn-console .wp-list-table td,
+.bsdn-console .wp-list-table th {
+	color: var(--bsdn-text);
+	border-color: var(--bsdn-track);
+}
+
+.bsdn-console .wp-list-table tbody td {
+	border-top: 1px solid var(--bsdn-track);
+}
+
+.bsdn-console .wp-list-table strong {
+	color: var(--bsdn-head);
+}
+
+.bsdn-console .wp-list-table .no-items td {
+	color: var(--bsdn-dim);
+}
+
+.bsdn-console .row-actions {
+	color: var(--bsdn-dim);
+}
+
+.bsdn-console .row-actions .submitdelete,
+.bsdn-console .row-actions .delete a {
+	color: var(--bsdn-crit);
+}
+
+.bsdn-console .toggle-row::before {
+	color: var(--bsdn-dim);
+}
+
+.bsdn-swatch {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin-right: 6px;
+	vertical-align: -1px;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	border-radius: 2px;
+}
+
+/* WordPress colours .widefat p/ol/ul dark grey; keep them readable here. */
+.bsdn-console .widefat p,
+.bsdn-console .widefat ol,
+.bsdn-console .widefat ul {
+	color: var(--bsdn-text);
+}
+
+.bsdn-console .widefat p.bsdn-excerpt {
+	margin: 2px 0 0;
+	color: var(--bsdn-dim);
+}
+
+/* Column widths: room for the note, the short columns stay short. */
+.bsdn-console .wp-list-table .column-title {
+	width: 26%;
+}
+
+.bsdn-console .wp-list-table .column-author,
+.bsdn-console .wp-list-table .column-priority,
+.bsdn-console .wp-list-table .column-status {
+	width: 9%;
+}
+
+.bsdn-console .wp-list-table .column-audience,
+.bsdn-console .wp-list-table .column-screens {
+	width: 13%;
+}
+
+.bsdn-console .wp-list-table .column-deadline,
+.bsdn-console .wp-list-table .column-updated_at {
+	width: 10.5%;
+}
+
+/* Priority labels (named bsdn-pri-*, not bsdn-priority-*, which the
+   sticky-note stylesheet uses for the urgent note's red border). */
+.bsdn-pri {
+	white-space: nowrap;
+}
+
+.bsdn-pri-1 {
+	color: var(--bsdn-warn);
+	font-weight: 600;
+}
+
+.bsdn-pri-2 {
+	color: var(--bsdn-crit);
+	font-weight: 600;
+}
+
+.bsdn-overdue {
+	color: var(--bsdn-crit);
+	font-weight: 600;
+}
+
+/* Settings form */
+
+.bsdn-console .form-table th,
+.bsdn-console .form-table td {
+	color: var(--bsdn-text);
+}
+
+.bsdn-console .form-table th {
+	color: var(--bsdn-head);
+}
+
+.bsdn-console .form-table {
+	border-top: 1px solid var(--bsdn-line);
+}
+
+/* Export / import */
+
+.bsdn-console .bsdn-transfer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin: 10px 0 4px;
+	padding: 10px 12px;
+	background: var(--bsdn-pane);
+	border: 1px solid var(--bsdn-line);
+	border-radius: 8px;
+}
+
+.bsdn-console .bsdn-import-form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin-left: auto;
+}
+
+.bsdn-console .bsdn-import-form input[type="file"] {
+	color: var(--bsdn-dim);
+	max-width: 100%;
+}
+
+/* WordPress colours notice paragraphs itself; keep them readable here. */
+.bsdn-console .notice p,
+body.bsdn-admin .update-nag p {
+	color: var(--bsdn-text, #d5dde2);
+}
+
+.bsdn-console .bsdn-import-form input[type="file"]::file-selector-button {
+	margin-right: 8px;
+	padding: 4px 10px;
+	background: var(--bsdn-track);
+	border: 1px solid var(--bsdn-line);
+	border-radius: 3px;
+	color: var(--bsdn-text);
+	cursor: pointer;
+}
+
+.bsdn-console .bsdn-import-form input[type="file"]::file-selector-button:hover {
+	border-color: var(--bsdn-cyan);
+	color: var(--bsdn-head);
+}
